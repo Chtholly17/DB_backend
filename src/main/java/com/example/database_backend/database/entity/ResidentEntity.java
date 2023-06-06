@@ -25,6 +25,7 @@ public class ResidentEntity {
     private String residence;
     @Basic
     @Column(name = "number", nullable = false, length = 11)
+
     private String number;
     @OneToMany(mappedBy = "residentByResidentId")
     private Collection<CommentEntity> commentsById;
@@ -39,14 +40,13 @@ public class ResidentEntity {
     private Collection<VisitEntity> visitsById;
     @OneToMany(mappedBy = "residentByVisitor")
     private Collection<VisitEntity> visitsById_0;
+
     @Basic
     @Column(name = "passwd", nullable = false, length = 50)
     private String passwd;
 
     public ResidentEntity() {
     }
-
-
     // constructor with parameters
 
     public ResidentEntity(String id, int age, String gender, String name, String residence, String number, Collection<CommentEntity> commentsById, Collection<CommunitymanagerEntity> communitymanagersById, Collection<DistrictmanagerEntity> districtmanagersById, ResidenceEntity residenceByResidence, Collection<VisitEntity> visitsById, Collection<VisitEntity> visitsById_0) {
@@ -64,6 +64,7 @@ public class ResidentEntity {
         this.visitsById_0 = visitsById_0;
     }
 
+    // constructor with parameters
     public String getId() {
         return id;
     }
